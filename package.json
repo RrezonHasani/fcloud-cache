@@ -1,0 +1,32 @@
+{
+  "name": "fcloud-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RrezonHasani/fcloud-cache.git"
+  },
+  "author": "Rrezon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RrezonHasani/fcloud-cache/issues"
+  },
+  "homepage": "https://github.com/RrezonHasani/fcloud-cache#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "tsc-watch": "^5.0.3",
+    "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "airbnb": "0.0.2",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
