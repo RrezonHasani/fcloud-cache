@@ -40,7 +40,7 @@ router.get(
         });
       }
       logger.info("Cache miss");
-      data = await usecase().create({ key, value: "1" });
+      data = await usecase().create({ key, value: randomString() });
       message = "Cache created!";
       await usecase().cacheLimit();
       return res.status(201).json({
@@ -64,12 +64,12 @@ router.post(
       if (data) {
         logger.info("Cache updated");
         await usecase().update(data, { value: randomString(), lastUsed: new Date() });
-        message = "Cache updated!";
+        message = "Cache updated";
         statusCode = 200;
       } else {
         logger.info("Cache created");
         data = await usecase().create({ key, value: randomString() });
-        message = "Cache created!";
+        message = "Cache created";
         statusCode = 201;
       }
       await usecase().cacheLimit();
@@ -89,7 +89,7 @@ router.delete(
     try {
       const { key } = req.params;
       const data = await usecase().getByKey(key);
-      if (data) {
+      if (!data) {
         return res.status(404).json({
           message: "Cache not found!",
         });
