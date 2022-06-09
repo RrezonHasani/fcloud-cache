@@ -46,11 +46,11 @@ npm run start
 +--------+-------------------------+
   Method | URI
 +--------+-------------------------+
-  GET    | /api/cache/
-  GET    | /api/cache/:key
-  POST   | /api/cache/:key
-  DELETE | /api/cache/:key
-  DELETE | /api/cache/
+  GET    | /api/cache/keys # get all keys
+  GET    | /api/cache/:key # get cache by key
+  POST   | /api/cache/:key # create-update cache by key
+  DELETE | /api/cache/:key # delete cache by key
+  DELETE | /api/cache/ # delete all keys
 +--------+-------------------------+
 ```
 
