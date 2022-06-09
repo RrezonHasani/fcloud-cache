@@ -4,6 +4,7 @@ import getAll from "./getAll";
 import create, { ICreateCache } from "./create";
 import update, { IUpdateCache } from "./update";
 import deleteByKey from "./deleteByKey";
+import deleteAll from "./deleteAll";
 
 export interface ICacheUseCase {
   getByKey(key: string): Promise<ICache>
@@ -11,6 +12,7 @@ export interface ICacheUseCase {
   create(data: ICreateCache): Promise<ICache>
   update(entity: ICache, data: IUpdateCache): Promise<ICache>
   deleteByKey(key: string): Promise<boolean>
+  deleteAll(): Promise<boolean>
 }
 
 export default (): ICacheUseCase => ({
@@ -19,4 +21,5 @@ export default (): ICacheUseCase => ({
   create: create(),
   update: update(),
   deleteByKey: deleteByKey(),
+  deleteAll: deleteAll(),
 });

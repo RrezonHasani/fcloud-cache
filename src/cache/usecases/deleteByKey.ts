@@ -5,7 +5,7 @@ export default () => {
   return async (key: string): Promise<boolean> => {
     const cache = await Cache.findOne({ key });
     if (!cache) {
-      logger.error(`Not found cache by key: ${key}`);
+      logger.info(`Not found cache by key: ${key}`);
       return false;
     }
     await cache.remove();
