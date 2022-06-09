@@ -104,4 +104,16 @@ router.delete(
   },
 );
 
+router.delete(
+  "/",
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      await usecase().deleteAll();
+      return res.status(200).json({ message: "all caches deleted" });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
 export default router;
