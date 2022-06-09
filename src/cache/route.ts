@@ -67,7 +67,7 @@ router.post(
         message = "Cache updated!";
         statusCode = 200;
       } else {
-        console.log("Cache created");
+        logger.info("Cache created");
         data = await usecase().create({ key, value: randomString() });
         message = "Cache created!";
         statusCode = 201;

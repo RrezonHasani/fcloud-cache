@@ -1,3 +1,4 @@
+import { logger } from "../../utils/logger";
 import { ICache } from "../model";
 
 export interface IUpdateCache {
@@ -8,7 +9,7 @@ export interface IUpdateCache {
 export default () => {
   return async (entity: ICache, data: IUpdateCache): Promise<ICache> => {
     if (!data) {
-      console.log(`could not update cache`);
+      logger.info(`could not update cache`);
     }
     entity.set("value", data.value);
     entity.set("lastUsed", new Date());
