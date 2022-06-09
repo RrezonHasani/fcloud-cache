@@ -28,7 +28,7 @@ If you are using windows command prompt:
 ```
 copy .env.example .env
 ```
-Running docker compose will create MongoDB instance
+Run docker compose will create MongoDB instance
 ```
 docker-compose up -d
 ```
