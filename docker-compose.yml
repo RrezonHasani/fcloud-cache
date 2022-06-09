@@ -1,0 +1,14 @@
+version: '3'
+services:
+  database:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-storage:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DB_USER_NAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}
+
+volumes:
+  mongo-storage:
