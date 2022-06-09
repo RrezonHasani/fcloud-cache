@@ -82,4 +82,26 @@ router.post(
     }
   },
 );
+
+router.delete(
+  "/:key",
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { key } = req.params;
+      const data = await usecase().getByKey(key);
+      if (data) {
+        return res.status(404).json({
+          message: "Cache not found!",
+        });
+      }
+      const result = await usecase().deleteByKey(key);
+      return res.status(200).json({
+        message: `Cache with key: ${key} ${result ? "deleted" : "was not deleted!"}`,
+      });
+    } catch (error) {
+      next(error);
+    }
+  },
+);
+
 export default router;
