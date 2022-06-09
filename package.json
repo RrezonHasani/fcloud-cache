@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/server.ts",
+    "start:dev": "tsc-watch --onSuccess \"node dist/server\"",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint --fix src/**/*.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +36,7 @@
     "eslint": "^8.17.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
     "nodemon": "^2.0.16",
     "ts-node": "^10.8.1"
   }
