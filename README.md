@@ -14,7 +14,7 @@ Make sure to have at least node version 14.18.0 before getting started.
 using **Typescript, ExpressJS and MongoDB with Mongoose**.
 
 
-# Start the app
+## Start the app
 
 To get started with the project run:
 ```
