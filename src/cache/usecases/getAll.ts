@@ -2,10 +2,10 @@ import { logger } from "../../utils/logger";
 import { Cache, ICache } from "../model";
 
 export default () => {
-  return async (key: string): Promise<ICache> => {
-    const cache = await Cache.findOne({ key });
+  return async (): Promise<ICache[]> => {
+    const cache = await Cache.find({});
     if (!cache) {
-      logger.info(`could not found cache with key: ${key}`);
+      logger.info(`not found any cache`);
     }
     return cache;
   };
